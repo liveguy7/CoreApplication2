@@ -1,9 +1,9 @@
 ﻿
 
 <div>
-    <h2>
+    <h1>
         All Cars 
-    </h2>
+    </h1>
 </div>
 
 <h2>@Model.CurrentCategory</h2>
@@ -12,22 +12,29 @@
     int pos = 1;
 }
 
-@foreach (var car in Model.Cars)
-{
-    <div class="col-sm-4 col-lg-4 col-md-4">
-        <div class="img-thumbnail">
-        <img src="@Url.Content($"~/images/car{pos}.jpg")" />
-        <div class="caption-top">
-            <h3 class="pull-right">@car.Price.ToString("c")</h3>
-            <h3>@car.Name</h3>
-            <p>@car.ShortDescription</p>
-        </div>
-        
-        </div>
-    </div>
+@{
+    foreach (Car car1 in Model.Cars)
+    {
+        //@Html.Partial("_CarSummary", car)
+        <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="img-thumbnail">
+                <img src="@Url.Content($"~/images/car{pos}.jpg")" />
+                <div class="caption-top">
+                    <h3 class="pull-right">@car1.Price.ToString("c")</h3>
+                    <h3>@car1.Name</h3>
+                    <p>@car1.ShortDescription</p>
 
-    pos++;
+
+                </div>
+
+            </div>
+
+        </div>
+        pos++;
+    }
+
 }
+
 
 
 

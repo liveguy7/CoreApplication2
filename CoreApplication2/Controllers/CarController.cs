@@ -20,7 +20,7 @@ namespace CoreApplication2.Controllers
         {
             CarListViewModel cm = new CarListViewModel();
             cm.Cars = _carRepository.Cars;
-            cm.CurrentCategory = "Car Category";
+            cm.CurrentCategory = "Car Categories";
 
             return View(cm);
 

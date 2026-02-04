@@ -1,6 +1,7 @@
 ﻿using CoreApplication2.Data;
 using CoreApplication2.Data.Interfaces;
 using CoreApplication2.Data.Mocks;
+using CoreApplication2.Data.Models;
 using CoreApplication2.Data.Repositories;
 using Microsoft.EntityFrameworkCore;
 
@@ -25,8 +26,13 @@ namespace CoreApplication2
                         options.UseSqlServer(_configurationRoot.GetConnectionString("DefaultConnectionString")));
             services.AddTransient<ICarRepository, CarRespository>();
             services.AddTransient<ICategoryRepository, CategoryRepository>();
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddScoped(sp => ShoppingCart.GetCart(sp));
+
             services.AddMvc(options => 
                          options.EnableEndpointRouting = false);
+            services.AddMemoryCache();
+            services.AddSession();
 
         }
 

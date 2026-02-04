@@ -1,0 +1,30 @@
+﻿@model Car
+
+@{
+    int pos = 1;
+}
+
+    <div class="col-sm-4 col-lg-4 col-md-4">
+        <div class="img-thumbnail">
+            <img src="@Url.Content($"~/images/car{pos}.jpg")" />
+            <div class="caption-top">
+                <h3 class="pull-right">@Model.Price.ToString("c")</h3>
+                <h3>@Model.Name</h3>
+                <p>@Model.ShortDescription</p>
+
+
+            </div>
+
+        </div>
+
+    </div>
+    pos++;
+
+
+
+
+
+
+
+
+
