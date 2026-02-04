@@ -6,9 +6,9 @@ namespace CoreApplication2.Data.Interfaces
     {
         IEnumerable<Car> Cars { get; }
 
-        //IEnumerable<Car> PreferredCars { get; set; }
+        IEnumerable<Car> PreferredCars { get; }
 
-        //Car GetCarById(int carId);
+        Car GetCarById(int carId);
 
     }
 }

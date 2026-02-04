@@ -3,7 +3,7 @@ using CoreApplication2.Data.Models;
 
 namespace CoreApplication2.Data.Mocks
 {
-    public class MockCarRepository : ICarRepository
+    public class MockCarRepository
     {
         private readonly ICategoryRepository _categoryRepository = new MockCategoryRepository();
         

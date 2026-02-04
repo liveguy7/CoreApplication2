@@ -20,3 +20,10 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+img {
+    max-width: 20%;
+    height: auto;
+    display: block;
+}
+
