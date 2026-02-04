@@ -1,5 +1,5 @@
 using System.Diagnostics;
-using CoreApplication2.Models;
+using CoreApplication2.Data.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CoreApplication2.Controllers
