@@ -26,6 +26,7 @@ namespace CoreApplication2
                         options.UseSqlServer(_configurationRoot.GetConnectionString("DefaultConnectionString")));
             services.AddTransient<ICarRepository, CarRespository>();
             services.AddTransient<ICategoryRepository, CategoryRepository>();
+            services.AddTransient<IOrderRepository, OrderRepository>();
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddScoped(sp => ShoppingCart.GetCart(sp));
 

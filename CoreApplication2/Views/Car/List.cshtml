@@ -23,7 +23,16 @@
                     <h3>@car1.Name</h3>
                     <p>@car1.ShortDescription</p>
 
-
+                </div>
+                <div class="text-right">
+                  <p class="button">
+                  <a class="btn btn-success" id="cartButton"
+                    asp-controller = "ShoppingCart"
+                    asp-action="AddToShoppingCart"
+                    asp-route-carId="@car1.CarId">
+                  Add to Cart
+                  </a>
+                  </p>
                 </div>
 
             </div>
