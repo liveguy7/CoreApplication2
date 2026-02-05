@@ -29,6 +29,7 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Car" asp-action="List">Cars</a>
                         </li>
                         <li class="nav-item">
+                            @await Component.InvokeAsync("ShoppingCartSummary")
                             <a class="nav-link text-dark" asp-area="" asp-controller="ShoppingCart" asp-action="Index">Shop</a>
                         </li>
                     </ul>
