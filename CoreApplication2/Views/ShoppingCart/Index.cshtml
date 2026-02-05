@@ -1,0 +1,74 @@
+﻿@model ShoppingCarViewModel
+
+<h2>Shop Here</h2>
+<div class="container mt-3">
+    <table class="table table-dark">
+        <thead>
+            <tr>
+                <th>Selected Amount</th>
+                <th>Car</th>
+                <th class="text-right">Price</th>
+                <th class="text-right">Subtotal</th>
+                <th class="text-right"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var line in Model.ShoppingCart.ShoppingCartItems)
+            {
+                <tr>
+                    <td class="text-center">@line.Amount</td>
+                    <td class="text-left">@line.Car.Name</td>
+                    <td class="text-right">@line.Car.Price.ToString("c")</td>
+                    <td class="text-right">
+                        @((line.Amount * line.Car.Price).ToString("c"))
+                    </td>
+                    <td class="text-right"></td>
+                </tr>
+            }
+            
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3" class="text-right">
+                    Total 
+                </td>
+                <td class="text-right">
+                    @Model.ShoppingCartTotal.ToString("c")
+                </td>
+            </tr>
+       </tfoot>
+    </table>
+
+<div class="text-right">
+    <div class="btn-group">
+        <a class="btn btn-success" asp-controller="Order" asp-action="Checkout">Check Out</a>
+        <a class="btn-group">
+            <a class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                Add Cars<span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu" role="menu">
+                <li><a asp-controller="Car" asp-action="List" asp-route-category="Sports">Sports</a></li>
+                <li><a asp-controller="Car" asp-action="List" asp-route-category="SuperSports">Super Sports</a></li>
+            </ul>
+        </a>
+
+    </div>
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
