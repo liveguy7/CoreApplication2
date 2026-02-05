@@ -8,7 +8,6 @@
 
   <ItemGroup>
     <Folder Include="OtherFolder\" />
-    <Folder Include="TagHelpers\" />
   </ItemGroup>
 
   <ItemGroup>

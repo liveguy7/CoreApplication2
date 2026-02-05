@@ -1,0 +1,24 @@
+﻿
+<div class="dropdown">
+    <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
+        View Cars
+    </button>
+
+    <ul class="dropdown-menu">
+        @foreach (var category in Model)
+        {
+            <li>
+                <a asp-controller="Car" asp-action="List"
+                   asp-route-category="@category.CategoryName">@category.CategoryName</a>
+            </li>
+        }
+        <li class="divider"></li>
+        <li>
+            <a asp-controller="Car" asp-action="List" asp-route-category="">View All Cars</a>
+        </li>
+    </ul>
+</div>
+
+
+
+

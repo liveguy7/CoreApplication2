@@ -48,8 +48,29 @@ namespace CoreApplication2
             app.UseStaticFiles();
             app.UseSession();
             app.UseMvcWithDefaultRoute();
-            
+
+            app.UseMvc(routes => 
+            {
+                routes.MapRoute(name: "categoryFilter", template: "Car/{action}/{category?}", defaults: new { Controller = "Car", action = "List" });
+
+            });
+
+
         }
     }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
